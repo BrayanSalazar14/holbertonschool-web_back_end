@@ -6,4 +6,13 @@ as argument and returns the string representation of the float.
 
 
 def to_str(n: float) -> str:
+    """
+    Convert a float number to a string.
+
+    Args:
+        n (float): The input floating-point number.
+
+    Returns:
+        str: The string representation of the input number.
+    """
     return str(n)

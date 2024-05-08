@@ -10,4 +10,16 @@ and should be annotated as a float.
 
 
 def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+    """
+    Create a tuple containing the square of a number associated with a key.
+
+    Args:
+        k (str): The key.
+        v (Union[int, float]): The value
+        (an integer or a floating-point number).
+
+    Returns:
+        Tuple[str, float]: A tuple containing the
+        key and the square of the value.
+    """
     return (k, v ** 2)
