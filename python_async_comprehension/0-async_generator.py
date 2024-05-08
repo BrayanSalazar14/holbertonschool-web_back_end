@@ -22,6 +22,8 @@ async def async_generator():
         async for number in async_generator():
             print(number)
     """
-    for i in range(10):
+    for _ in range(10):
         await asyncio.sleep(1)
         yield uniform(0, 10)
+
+    data = [yield uniform(0, 10), await asyncio.sleep(1) for _ in range(0, 10)]
