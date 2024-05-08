@@ -7,7 +7,7 @@ import asyncio
 from random import uniform
 
 
-async def async_generator():
+async def async_generator() -> float:
     """
     Asynchronous generator that yields random floats between 0 and 10
     with a delay of 1 second between each yield.
