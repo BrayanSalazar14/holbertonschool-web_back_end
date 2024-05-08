@@ -26,4 +26,3 @@ async def async_generator() -> AsyncGenerator[float, None]:
     for _ in range(10):
         await asyncio.sleep(1)
         yield uniform(0, 10)
-print(async_generator().__class__)
