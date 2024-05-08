@@ -5,10 +5,10 @@ then yield a random number between 0 and 10. Use the random module.
 """
 import asyncio
 from random import uniform
-from typing import AsyncIterator, AsyncGenerator
+from typing import AsyncGenerator
 
 
-async def async_generator() -> AsyncIterator[AsyncGenerator[float, None]]:
+async def async_generator() -> AsyncGenerator[float, None]:
     """
     Asynchronous generator that yields random floats between 0 and 10
     with a delay of 1 second between each yield.
@@ -26,3 +26,4 @@ async def async_generator() -> AsyncIterator[AsyncGenerator[float, None]]:
     for _ in range(10):
         await asyncio.sleep(1)
         yield uniform(0, 10)
+print(async_generator().__class__)
