@@ -8,7 +8,7 @@ from random import uniform
 from typing import AsyncIterator, AsyncGenerator
 
 
-async def async_generator() -> AsyncIterator[AsyncGenerator[float]]:
+async def async_generator() -> AsyncIterator[AsyncGenerator[float, None]]:
     """
     Asynchronous generator that yields random floats between 0 and 10
     with a delay of 1 second between each yield.
