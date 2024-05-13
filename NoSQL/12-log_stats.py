@@ -14,7 +14,7 @@ if __name__ == "__main__":
     print(f'{col.count_documents({})} logs')
     print('Methods:')
     for method in methods:
-        print(f'\tmethod {method}: ',
+        print(f'\tmethod {method}:',
               col.count_documents({'method': method}))
     status_check = col.count_documents({'method': 'GET', 'path': '/status'})
     print(f'{status_check} status check')
