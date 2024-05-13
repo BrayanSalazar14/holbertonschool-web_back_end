@@ -13,5 +13,5 @@ if __name__ == "__main__":
     for method in methods:
         print('\t' + f'method {method}: ',
               col.count_documents({'method': method}))
-    status_check = col.count_documents({'path': '/status'})
+    status_check = col.count_documents({'method': 'GET', 'path': '/status'})
     print(status_check, 'status check')
