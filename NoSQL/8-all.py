@@ -3,9 +3,8 @@
 Module that lists all documents in a collection
 """
 
-if __name__ == "__main__":
-    def list_all(mongo_collection):
-        """
+def list_all(mongo_collection):
+    """
     Retrieve all documents from a MongoDB collection.
 
     Args:
@@ -14,4 +13,4 @@ if __name__ == "__main__":
     Returns:
         A list containing all documents in the collection.
     """
-        return [col for col in mongo_collection.find({})]
+    return [col for col in mongo_collection.find({})]
