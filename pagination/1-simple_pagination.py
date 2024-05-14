@@ -28,24 +28,35 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Extracts a page of data from the CSV file and returns it as a
+        list of lists.
+
+        Args:
+            page (int, optional): The page number to retrieve. Defaults to 1.
+            page_size (int, optional): The page size, i.e., the maximum number
+            of items per page.
+            Defaults to 10.
+
+        Returns:
+            List[List[str]]: A list of lists representing the extracted data
+            page from the CSV file.
+
+        Raises:
+            AssertionError: If the 'page' or 'page_size' arguments are not
+            positive integers.
+        """
         assert isinstance(page, int) and isinstance(
             page_size, int)
         assert page > 0 and page_size > 0
-
         data = []
-        elem = []
         with open('Popular_Baby_Names.csv') as file:
             csv_reader = csv.reader(file, delimiter=',')
             index = index_range(page, page_size)
-            for cv in csv_reader:
-                data.append(cv)
-
-            try:
-                for index in range(index[0] + 1, index[1] + 1):
-                    elem.append(data[index])
-            except IndexError:
-                return []
-        return elem
+            for pos, cv in enumerate(csv_reader):
+                if pos in range(index[0] + 1, index[1] + 1):
+                    data.append(cv)
+        return data
 
 
 def index_range(page, page_size):
