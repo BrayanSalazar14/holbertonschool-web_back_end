@@ -70,10 +70,12 @@ class Server:
         """
         total_pages = len(self.indexed_dataset())
         assert index <= total_pages
-        index_dataset = self.indexed_dataset().values()
+        index_dataset = self.indexed_dataset()
         next_index = index + page_size
-        data = [dt for pos, dt in enumerate(
-            index_dataset) if pos in range(index, next_index)]
+        if index not in index_dataset.keys():
+            next_index += 1
+        data = [dt for pos, dt in index_dataset.items() if pos in range(
+            index, next_index)]
         data_page = {
             "index": index,
             "data": data,

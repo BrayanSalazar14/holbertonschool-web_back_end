@@ -49,7 +49,6 @@ class Server:
         assert isinstance(page, int) and isinstance(
             page_size, int)
         assert page > 0 and page_size > 0
-        data = []
         with open('Popular_Baby_Names.csv') as file:
             csv_reader = csv.reader(file, delimiter=',')
             index = index_range(page, page_size)
