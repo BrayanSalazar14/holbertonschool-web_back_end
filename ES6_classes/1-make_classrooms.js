@@ -3,5 +3,7 @@ import ClassRoom from "./0-classroom";
 /* eslint-disable */
 
 function initializeRooms() {
-  return [new ClassRoom(19), new ClassRoom(20), new ClassRoom(34)];
+  const roomsSize = [19, 20, 34]
+  const rooms = roomsSize.map((size) => new ClassRoom(size))
+  return rooms
 }
