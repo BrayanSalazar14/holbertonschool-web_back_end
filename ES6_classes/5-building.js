@@ -1,6 +1,6 @@
 export default class Building {
   constructor(sqft) {
-    if (this.constructor !== Building) {
+    if (new.target !== Building) {
       this.evacuationWarningMessage();
     } else {
       this._sqft = sqft;
@@ -17,14 +17,14 @@ export default class Building {
   }
 }
 
-const b = new Building(100);
-console.log(b);
+// const b = new Building(100);
+// console.log(b);
 
-class TestBuilding extends Building {}
+// class TestBuilding extends Building {}
 
-try {
-    new TestBuilding(200)
-}
-catch(err) {
-    console.log(err);
-}
+// try {
+//     new TestBuilding(200)
+// }
+// catch(err) {
+//     console.log(err);
+// }
