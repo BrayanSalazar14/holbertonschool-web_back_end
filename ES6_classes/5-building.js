@@ -3,16 +3,12 @@ export default class Building {
     if (this.constructor !== Building) {
       this.evacuationWarningMessage();
     } else {
-      this.sqft = sqft;
+      this._sqft = sqft;
     }
   }
 
   get sqtf() {
     return this._sqtf;
-  }
-
-  set sqft(value) {
-    this._sqtf = value;
   }
 
   /* eslint-disable */
