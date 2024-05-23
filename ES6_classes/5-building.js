@@ -8,11 +8,23 @@ export default class Building {
   }
 
   get sqtf() {
-    return this._sqtf;
+    return this.sqtf;
   }
 
   /* eslint-disable */
   evacuationWarningMessage() {
     throw Error('Class extending Building must override evacuationWarningMessage');
   }
+}
+
+const b = new Building(100);
+console.log(b);
+
+class TestBuilding extends Building {}
+
+try {
+    new TestBuilding(200)
+}
+catch(err) {
+    console.log(err);
 }
