@@ -4,5 +4,5 @@ export default function cleanSet(set, startString) {
   set.forEach((element) => {
     if (element.startsWith(startString)) newString.push(element.slice(startString.length));
   });
-  return newString;
+  return newString.join('-');
 }
